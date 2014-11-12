@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CodeFist - JavaScript Gaming</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap-theme.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/codemirror.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/foldgutter.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/lint/lint.css" />
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/site.css" />
+</head>
+<body ng-app="codefist">
+    <div class="container">
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("CodeFist", "Index", "Home", null, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                        <li ng-controller="LoginCtrl" ng-switch="isLoggedIn()">
+                            <a ng-switch-when="false" ng-click="login()" ng-disabled="isLoading()">Login</a>
+                            <a ng-switch-when="true" ng-click="logout()">Logout {{username()}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="body-content" ng-view>
+        </div>
+        <hr />
+        <footer>
+        </footer>
+    </div>
+	
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-loader.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-resource.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jshint/2.5.10/jshint.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/codemirror.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/lint/lint.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/lint/javascript-lint.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/foldcode.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/foldgutter.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/brace-fold.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/comment-fold.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/mode/javascript/javascript.js"></script>
+	<script src="/public/scripts/ui-codemirror.js"></script>
+	<script src="/public/app.js"></script>
+</body>
+</html>
