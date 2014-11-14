@@ -23,11 +23,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("CodeFist", "Index", "Home", null, new { @class = "navbar-brand" })
+                    <a href="/" class="navbar-brand">CodeFist</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                        <li><a href="/">Home</a></li>
                         <li ng-controller="LoginCtrl" ng-switch="isLoggedIn()">
                             <a ng-switch-when="false" ng-click="login()" ng-disabled="isLoading()">Login</a>
                             <a ng-switch-when="true" ng-click="logout()">Logout {{username()}}</a>
@@ -59,7 +59,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/brace-fold.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/addon/fold/comment-fold.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.7.0/mode/javascript/javascript.js"></script>
-	<script src="/public/scripts/ui-codemirror.js"></script>
-	<script src="/public/app.js"></script>
+	<script src="/scripts/ui-codemirror.js"></script>
+	<script src="/app/app.js"></script>
 </body>
 </html>
